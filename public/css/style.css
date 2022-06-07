@@ -1,0 +1,51 @@
+* {
+    font-size: 18px;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, .add, .card, .form {
+    margin: 20px 20px;
+    width: fit-content;
+}
+
+a {
+    text-decoration: none;
+}
+
+.add, .card, button {
+    background-color: lightgrey;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.add, button {
+    margin-top: 40px;
+    padding: 10px 10px;
+    border-color: white;
+}
+
+.stuff-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+b, h1 {
+    font-size: 24px;
+}
+
+label, input {
+    margin: 20px 0px;
+    padding: 5px;
+}
+
+.button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#name {
+    margin-right: 18px;
+}
+
