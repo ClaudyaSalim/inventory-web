@@ -20,6 +20,31 @@ class StuffController extends Controller
             'qty' => $request->qty,
         ]);
 
-        return redirect('/');
+        return redirect(route('home'));
+    }
+
+    public function editStuff($id) {
+        $stuff = Stuff::find($id);
+
+        return view ('edit-stuff', compact('stuff', 'id'));
+    }
+
+    public function updateStuff(Request $request, $id) {
+        $stuff = Stuff::find($id);
+
+        $stuff->name = $request->name;
+        $stuff->qty = $request->qty;
+
+        $stuff->save();
+
+        return redirect (route('home'));
+    }
+
+    public function deleteStuff($id) {
+        $stuff = Stuff::find($id);
+
+        $stuff->delete();
+
+        return redirect(route('home'));
     }
 }

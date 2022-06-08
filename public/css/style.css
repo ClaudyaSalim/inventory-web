@@ -4,7 +4,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1, .add, .card, .form {
+h1, .add, .card, .form{
     margin: 20px 20px;
     width: fit-content;
 }
@@ -13,16 +13,19 @@ a {
     text-decoration: none;
 }
 
-.add, .card, button {
+.card{
     background-color: lightgrey;
     padding: 20px 20px;
     border-radius: 10px;
 }
 
-.add, button {
+.add, button, .edit {
     margin-top: 40px;
     padding: 10px 10px;
-    border-color: white;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: rgb(160, 160, 160);
+    width: fit-content;
 }
 
 .stuff-body {
@@ -32,6 +35,15 @@ a {
 
 b, h1 {
     font-size: 24px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.edit {
+    margin-right: 20px;
 }
 
 label, input {

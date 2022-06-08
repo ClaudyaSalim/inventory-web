@@ -9,12 +9,22 @@
 </head>
 <body>
     <h1>My Store</h1>
-    <div class="add"><a href="/create">Add Stuff</a></div>
+    <div class="add"><a href="{{route('stuff.add')}}">Add Stuff</a></div>
     <div class="stuff-body">
         @foreach ($stuffs as $stuff)
             <div class="card">
                 <b>{{$stuff->name}}</b><br>
                 <p>Quantity: {{$stuff->qty}}</p>
+                <div class="buttons">
+                    <div class="edit">
+                        <a href="{{route('stuff.edit', ['id' => $stuff->id])}}">Edit</a>
+                    </div>
+                    <form action="{{route('stuff.delete', ['id' => $stuff->id])}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
             </div>
         @endforeach
     </div>

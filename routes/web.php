@@ -14,10 +14,16 @@ use App\Http\Controllers\StuffController;
 |
 */
 
-Route::get('/', [StuffController::class, 'index']);
+Route::get('/', [StuffController::class, 'index'])->name('home');
 
 Route::get('/create', function () {
     return view('add-stuff');
-});
+})->name('stuff.add');
 
-Route::post('/create/stuff', [StuffController::class, 'createStuff']);
+Route::post('/create/done', [StuffController::class, 'createStuff'])->name('stuff.create');
+
+Route::get('/{id}/edit', [StuffController::class, 'editStuff'])->name('stuff.edit');
+
+Route::patch('/{id}/update', [StuffController::class, 'updateStuff'])->name('stuff.update');
+
+Route::delete('/{id}/delete', [StuffController::class, 'deleteStuff'])->name('stuff.delete');
