@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StuffController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,13 @@ use App\Http\Controllers\StuffController;
 
 Route::get('/', [StuffController::class, 'index'])->name('home');
 
-Route::get('/create', function () {
-    return view('add-stuff');
-})->name('stuff.add');
+Route::get('/create', [CategoryController::class,'addStuff'])->name('stuff.add');
+
+Route::get('/category', [CategoryController::class, 'viewCategory'])->name('category');
 
 Route::post('/create/done', [StuffController::class, 'createStuff'])->name('stuff.create');
+
+Route::get('/{id}/category', [CategoryController::class, 'viewStuff'])->name('stuff.view');
 
 Route::get('/{id}/edit', [StuffController::class, 'editStuff'])->name('stuff.edit');
 

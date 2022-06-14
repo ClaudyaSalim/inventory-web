@@ -18,6 +18,13 @@
             <label>Quantity: </label>
             <input type="text" name="qty">
             <br>
+            <label>Category: </label>
+            <select name="category">
+                <option selected value="null">None</option>
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->type}}</option>
+                @endforeach
+            </select>
             <div class="button">
                 <button type="submit">Add</button>
             </div>

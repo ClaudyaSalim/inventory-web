@@ -5,20 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <h1>My Store</h1>
+    <h1>{{$category->type}}</h1>
     <div class="nav">
         <div class="add"><a href="{{route('stuff.add')}}">Add Stuff</a></div>
-        <div class="category"><a href="{{route('category')}}">Category</a></div>
     </div>
     <div class="stuff-body">
         @foreach ($stuffs as $stuff)
             <div class="card">
                 <b>{{$stuff->name}}</b><br>
                 <p>Quantity: {{$stuff->qty}}</p>
-                <div class="stuff-category"><a href="{{route('stuff.view', ['id' => $stuff->category_id])}}">{{$stuff->category->type}}</a></div>
                 <div class="buttons">
                     <div class="edit">
                         <a href="{{route('stuff.edit', ['id' => $stuff->id])}}">Edit</a>

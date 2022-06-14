@@ -4,7 +4,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1, .add, .card, .form{
+h1, .add, .card, .form, .category, .categories{
     margin: 20px 20px;
     width: fit-content;
 }
@@ -14,17 +14,34 @@ a {
 }
 
 .card{
-    background-color: lightgrey;
+    background-color: rgb(225, 225, 225);
     padding: 20px 20px;
     border-radius: 10px;
 }
 
-.add, button, .edit {
+.stuff-category {
+    border-radius: 12px;
+    padding: 3px 3px;
+    background-color: rgb(180, 180, 180);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.stuff-category a {
+    border-radius: 10px;
+    padding: 5px 5px;
+    font-size: 12px;
+    background-color: rgb(225, 225, 225);
+    font-weight: 600;
+}
+
+.add, button, .edit, .category, .categories {
     margin-top: 40px;
     padding: 10px 10px;
     border-radius: 10px;
     border-width: 0px;
-    background-color: rgb(160, 160, 160);
+    background-color: rgb(180, 180, 180);
     width: fit-content;
 }
 
@@ -37,16 +54,17 @@ b, h1 {
     font-size: 24px;
 }
 
-.buttons {
+.buttons, .nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .edit {
     margin-right: 20px;
 }
 
-label, input {
+label, input, select, option {
     margin: 20px 0px;
     padding: 5px;
 }

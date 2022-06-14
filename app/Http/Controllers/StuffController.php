@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Stuff;
+use App\Models\Category;
 
 class StuffController extends Controller
 {
@@ -16,6 +17,7 @@ class StuffController extends Controller
 
     public function createStuff(Request $request){
         Stuff::create([
+            'category_id' => $request->category,
             'name' => $request->name,
             'qty' => $request->qty,
         ]);
@@ -25,8 +27,9 @@ class StuffController extends Controller
 
     public function editStuff($id) {
         $stuff = Stuff::find($id);
+        $categories = Category::all();
 
-        return view ('edit-stuff', compact('stuff', 'id'));
+        return view ('edit-stuff', compact('stuff', 'id', 'categories'));
     }
 
     public function updateStuff(Request $request, $id) {
@@ -34,6 +37,7 @@ class StuffController extends Controller
 
         $stuff->name = $request->name;
         $stuff->qty = $request->qty;
+        $stuff->category_id = $request->category;
 
         $stuff->save();
 
